@@ -331,8 +331,8 @@ jobs:
           file: docker/gateway.Dockerfile
           push: false
           tags: sgl-model-gateway:test
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=gha,scope=sgl-model-gateway
+          cache-to: type=gha,mode=max,scope=sgl-model-gateway
 
   finish:
     needs: [build-wheel, python-unit-tests, unit-tests, gateway-e2e, docker-build-test]
